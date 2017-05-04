@@ -1,0 +1,31 @@
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error: SQLSTATE[HY000] [1045] Access denied for user 'rooot'@'localhost' (using password: YES)\n\nError: SQLSTATE[HY000] [1045] Access denied for user 'rooot'@'localhost' (using password: YES)\n\nError: SQLSTATE[HY000] [1045] Access denied for user 'rooot'@'localhost' (using password: YES)\n\nError: SQLSTATE[HY000] [1045] Access denied for user 'rooot'@'localhost' (using password: YES)\n\n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Error: SQLSTATE[HY000] [1045] Access denied for user 'rooot'@'localhost' (using password: YES)\n\n
