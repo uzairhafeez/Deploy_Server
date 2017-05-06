@@ -1,13 +1,13 @@
 {
-   "FE":{ "dev" :{"ip": "192.168.2.3", "username": "uzair"},
-   	   "qa" :{"ip": "192.168.2.31", "username": "uzair"},
-	   "prod" :{"ip": "192.168.2.32", "username": "uzair"} },
+   "FE":{ "dev" :{"ip": "192.168.2.3", "username": "uzair", "pass": "pway088541234"},
+   	   "qa" :{"ip": "192.168.2.31", "username": "uzair", "pass": "pway088541234"},
+	   "prod" :{"ip": "192.168.2.32", "username": "uzair", "pass": "pway088541234"} },
   
-   "BE":{ "dev" :{"ip": "192.168.2.2", "username": "matt"},
-          "qa" :{"ip": "192.168.2.20", "username": "matt"},
-          "prod" :{"ip": "192.168.2.21", "username": "matt"} },
+   "BE":{ "dev" :{"ip": "192.168.2.2", "username": "matt", "pass": "password"},
+          "qa" :{"ip": "192.168.2.20", "username": "matt", "pass": "password"},
+          "prod" :{"ip": "192.168.2.21", "username": "matt", "pass": "password"} },
   
-   "API":{ "dev" :{"ip": "192.168.2.4", "username": "monik"},
-           "qa" :{"ip": "192.168.2.40", "username": "monik"},
-           "prod" :{"ip": "192.168.2.41", "username": "monik"} }
+   "API":{ "dev" :{"ip": "192.168.2.4", "username": "monik", "pass": "1234"},
+           "qa" :{"ip": "192.168.2.40", "username": "monik", "pass": "1234"},
+           "prod" :{"ip": "192.168.2.41", "username": "monik", "pass": "1234"} }
 }
