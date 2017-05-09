@@ -104,15 +104,38 @@ function rollbackPackage($request)
         $packageNum = $packageNum - 2;
         $package = $request['packageName'] . $packageNum;
         
-        $scpPackage = 'sshpass -p ' . $targetPass . ' scp -r /home/uzair/Packages/' . $package . '.tar.gz ' . $targetMachine['username'] . '@' . $targetIp . ':/home/' . $targetMachine['username'] . '/temp';
+        $scpPackage = 'sshpass -p ' . $targetPass . ' scp -r /home/uzair/Packages/' . $package . '.tar.gz ' . $targetMachine['username'] . '@' . $targetIp . ':/home/' . $targetMachine['username'] . '/Packages/';
 	shell_exec($scpPackage);
 	
-	$client = new rabbitMQClient("deployRabbitServer.ini","deployServer");
+
+
+
+# Changes exchanged based on the destination of the package to trigger 
+# target machines installer
+
+        if(($request['package'] == 'BE') && ($request['tier']  == 'qa'))
+                $packageExchange = "backendQA";
+        elseif(($request['package'] == 'BE') && ($request['tier']  == 'prod'))
+                $packageExchange = "backendProd";
+        elseif(($request['package'] == 'FE') && ($request['tier']  == 'qa'))
+                $packageExchange = "frontendQA";
+        elseif(($request['package'] == 'FE') && ($request['tier']  == 'prod'))
+                $packageExchange = "frontendProd";
+        elseif(($request['package'] == 'API') && ($request['tier']  == 'qa'))
+                $packageExchange = "apiQA";
+        elseif(($request['package'] == 'API') && ($request['tier']  == 'prod'))
+                $packageExchange = "apiProd";
+        else
+                $packageExchange = "deployServer";
+
+# Send Client request to the target machine
+
+        $client = new rabbitMQClient("deployRabbitServer.ini", $packageExchange);
         $rollbackReq = array();
-        $rollbackReq['type'] = 'deployPackage';
+        $rollbackReq['type'] = $request['package'] . $request['tier'];
         $rollbackReq['version'] = $packageNum;
         $rollbackReq['packageName'] = $request['packageName'];
-        $rollbackReq['packageTar'] = $request['packageName'] . $packageNum . ".tar.gz";
+	$rollbackReq['packageTar'] = $request['packageName'] . $packageNum . ".tar.gz";
 
         $client->publish($rollbackReq);
 
